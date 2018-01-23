@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a component of the Udacity "Grow with Google" Scholarship Program.
 
-Things you may want to cover:
+The Pixel Art Maker contains the following features:
+* Creates a grid up to 75x75.
+* Clicking on a cell changes it to the color specified at to top of the page.
+* Provides the option of a preloaded color-by-numbers image.
+* Borders and numbers can be removed or reinstated.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This app makes use of the jQuery JavaScript library.
