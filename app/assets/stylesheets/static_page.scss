@@ -1,0 +1,57 @@
+body {
+  text-align: center;
+  min-width: 960px;
+  height: 960px;
+}
+
+h1 {
+  font-family: Monoton;
+  font-size: 70px;
+  margin: 0.2em;
+}
+
+h2 {
+  margin: 1em 0 0.25em;
+}
+
+h2:first-of-type {
+  margin-top: 0.5em;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  border: solid;
+  border-width: 1px;
+}
+
+#container {
+/*  font-size: 0;
+  */
+  margin: 0 auto;
+
+}
+
+/* For Firefox */
+input[type="number"] {
+  width: 6em;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
