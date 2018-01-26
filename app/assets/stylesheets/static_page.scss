@@ -2,6 +2,7 @@ body {
   text-align: center;
   min-width: 960px;
   height: 960px;
+  background: linear-gradient(#b3e6ff, #0099ff);
 }
 
 h1 {
@@ -31,13 +32,13 @@ h2:first-of-type {
   margin: 0px;
   border: solid;
   border-width: 1px;
+  background-color: white;
 }
 
 #container {
-/*  font-size: 0;
-  */
-  margin: 0 auto;
-
+margin: 0 auto;
+  margin-top: 10px;
+  
 }
 
 /* For Firefox */
