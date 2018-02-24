@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 let colorPicker = "#000000";
 
+let drag = false;
 //Initiate and reset user-defined grid
 const sizePicker = document.querySelector("#sizePicker");
 sizePicker.addEventListener("submit", function(e) {
@@ -31,7 +32,8 @@ function drawGrid() {
 }
 
 //Change cell color on click
-$("#container").on("click", ".column", function() {
+$("#container").on("mousedown", ".column", function() {
+  drag = true;
   if ($(this).css("background-color") === "rgb(255, 255, 255)") {
     $(this).css("background-color", colorPicker);
   } else {
@@ -41,7 +43,7 @@ $("#container").on("click", ".column", function() {
 
 //Reset grid
 function reset() {
- $('#container').children().remove();
+ $('#container').children().remove()
 }
 
 //Initiate color by numbers
@@ -58,22 +60,28 @@ $("#pictureChoice").change(function() {
 function colorByNumbers(pictureChoice) {
   switch(pictureChoice){
     case 'smileyFace':
-      assignNumbers(smileyPicture);
+      assignNumbers(smileyPicture)
+      break;
+    case 'dog':
+      assignNumbers(dogPicture);
+      break;
+    case 'cat':
+      assignNumbers(catPicture)
       break;
   }
   }
 
 //Assign numbers
 function assignNumbers(pictureChoice) {
-  $('.column').each(function(index) {$(this).text((pictureChoice[index]))});
+  $('.column').each(function(index) {$(this).text((pictureChoice[index]))})
 }
 
 //When checked, removes border and numbers
 $('#checkBox').change(function(){
     if($(this).is(':checked')) {
-        clear();
+        clear()
     } else {
-        reinstate();
+        reinstate()
     }
 });
 
@@ -82,15 +90,31 @@ function clear(){
   $('.column').css("border","none");
   $('.column').each(function(){
     $(this).text("");
-  });
+  })
 }
 
 function reinstate(){
 colorByNumbers(($('#pictureChoice').val()));
   $('.column').each(function(){
     $(this).css("border", "1px solid");
-  });
+  })
 }
 
-const smileyPicture = "1111111111111111111111111111111111111111111111111111111111111111111222221111111111111223333322111111111123333333332111111112333333333332111111123333333333321111112333223332233321111123332233322333211111233333333333332111112333333333333321111123323333333233211111123323333323321111111233322222333211111111233333333321111111111223333322111111111111122222111111111111111111111111111111111111111111111111";
+const smileyPicture = "1111111111111111111111111111111111111111111111111111111111111111111222221111111111111223333322111111111123333333332111111112333333333332111111123333333333321111112333223332233321111123332233322333211111233333333333332111112333333333333321111123323333333233211111123323333323321111111233322222333211111111233333333321111111111223333322111111111111122222111111111111111111111111111111111111111111111111"
+
+
+$("#container").on("mouseover", ".column", 
+                   function() {
+  if (drag==true) {
+  if ($(this).css("background-color") === "rgb(255, 255, 255)") {
+    $(this).css("background-color", colorPicker);
+  } else {
+    $(this).css("background-color", "rgb(255, 255, 255)");
+  }
+  }
+});
+
+$("body").on("mouseup", function() {
+  drag = false;
+});
 });

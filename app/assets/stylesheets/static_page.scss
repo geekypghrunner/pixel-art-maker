@@ -56,3 +56,14 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+div.column {
+  transform: rotate(360deg);
+  transition: transform 2s
+}
+
+div.column:hover {
+  transform: none;
+  transition: none;
+    
+}
